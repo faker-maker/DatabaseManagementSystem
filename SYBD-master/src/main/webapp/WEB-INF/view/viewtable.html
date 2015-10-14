@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>View Table</title>
+
+</head>
+<body>
+
+<p th:text="@{Table + ': ' + ${table.name}}">N/A</p>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 100%; height: 100%;">
+    <tbody>
+    <tr th:each="record : ${table.records}">
+        <td th:each="value : ${record.values}">N/A</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

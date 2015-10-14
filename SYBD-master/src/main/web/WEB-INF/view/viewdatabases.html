@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>All databases</title>
+
+</head>
+<body>
+
+<p th:text="#{all.databases}">All databases</p>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 100%; height: 100%;">
+    <tbody>
+    <tr th:each="database : ${databases}">
+            <td th:text="${database.name}">N/A</td>
+            <td><a th:href="@{${'/databases/view?name=' + database.name}}" th:text="#{view}"/></td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="#" th:action="@{/databases/add}" method="get">
+    <table border="0" cellpadding="1" cellspacing="10">
+        <tbody>
+        <tr>
+            <td><input type="text" th:name="name"/></td>
+            <td><input name="AddDatabase" type="submit" th:value="#{add.database}"/></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+
+</body>
+</html>
